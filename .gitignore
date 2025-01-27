@@ -1,0 +1,17 @@
+# Ignore Android Studio project files
+.idea/
+
+# Ignore Gradle files
+.gradle/
+build/
+local.properties
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore other generated files
+*.apk
+*.ap_ 
+*.jar
+*.class
