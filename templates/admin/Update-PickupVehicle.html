@@ -1,0 +1,52 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<blockquote>
+  <form id="form1" name="form1" method="post" action="/update_pickupVehicle_post/{{ data.id }}">
+      {% csrf_token %}
+    <table width="500">
+      <tr>
+{#        <th width="176" scope="col">Phone Number</th>#}
+        <th colspan="2"><label for="textfield"></label>
+        <input type="text" class="form-control" placeholder="phonenumber" name="textfield" id="textfield" value="{{ data.phoneNumber }}" required pattern="[6-9][0-9]{9}"/></th>
+      </tr>
+        <tr>
+{#      <th width="176" scope="col">E mail</th>#}
+            <th colspan="2"><label for="textfield"></label>
+             <input class="form-control" placeholder="Email" type="email" name="textfield1" id="textfield" value="{{ data.email }}" required readonly/></th>
+        </tr>
+      <tr>
+{#        <td>Vehicle Number</td>#}
+        <td colspan="2"><label for="textfield2"></label>
+        <input type="text" class="form-control" placeholder="vehiclenumber" name="textfield2" id="textfield2" value="{{ data.vehicleNumber }}" required/></td>
+      </tr>
+      <tr>
+{#        <td>Model</td>#}
+        <td colspan="2"><label for="textfield3"></label>
+        <input class="form-control"placeholder="Model" type="text" name="textfield3" id="textfield3" value="{{ data.model }}" required/></td>
+      </tr>
+      <tr>
+{#        <td>Fuel-Type</td>#}
+        <td colspan="2"><label for="textfield4"></label>
+        <select name="textfield4" class="form-control">
+          <option>Diesel</option>
+          <option>Petrol</option>
+      </select></td>
+      </tr>
+      <tr align="center">
+        <td colspan="2"><input type="submit" class="btn btn-primary py-2 px-5" name="button" id="button" value="Update" required/></td>
+      </tr>
+    </table>
+  </form>
+</blockquote>
+</body>
+</html>
+{% endblock %}

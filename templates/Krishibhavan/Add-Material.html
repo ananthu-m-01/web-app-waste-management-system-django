@@ -1,0 +1,46 @@
+{% extends 'Krishibhavan/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/add_material_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+  <table width="500" class="text-white">
+    <tr>
+{#      <th width="103" scope="row">Material Name :</th>#}
+      <td colspan="2"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" placeholder="Material Name" required /></td>
+    </tr>
+    <tr>
+{#      <th scope="row">Description:</th>#}
+      <td colspan="2"><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control"  placeholder="Description" required></textarea></td>
+    </tr>
+    <tr>
+{#      <th scope="row">Price:</th>#}
+      <td colspan="2"><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" placeholder="Price" class="form-control" required/></td>
+    </tr>
+      <tr>
+{#      <th scope="row">Price:</th>#}
+      <td colspan="2"><label for="textfield2"></label>
+      <input type="number" name="textfield3" id="textfield3" placeholder="Quantity" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Image:</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required /></td>
+    </tr>
+    <tr align="center">
+      <th colspan="2" scope="row"><input type="submit" class="btn btn-primary py-2 px-5" name="button" id="button" value="Add" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

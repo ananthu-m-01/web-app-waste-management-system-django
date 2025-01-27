@@ -1,0 +1,36 @@
+{% extends 'Pickup-Vehicle/index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table class="text-white table">
+  <tr>
+    <th width="44" height="180" scope="col">SI No:</th>
+    <th width="76" scope="col">User name</th>
+    <th width="105" scope="col">House number</th>
+    <th width="86" scope="col">Ward number</th>
+    <th width="94" scope="col">Collection date</th>
+    <th width="104" scope="col">Waste type</th>
+    <th width="164" scope="col">waste quantity</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>{{ i.WASTEDETAILS.USER.name}}</td>
+    <td>{{ i.WASTEDETAILS.USER.houseNumber }}</td>
+    <td>{{ i.WASTEDETAILS.USER.wardnumber }}</td>
+    <td>{{ i.date }}</td>
+    <td>&nbsp;{{ i.WASTEDETAILS.wasteType }}</td>
+    <td>{{ i.collectedWaste }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/update_krishibhavan_post/{{ data.id }}">
+    {% csrf_token %}
+  <table width="500">
+    <tr>
+{#      <th width="293" scope="col">Name :</th>#}
+      <th width="71" scope="col"><label for="textfield"></label>
+      <input type="text" class="form-control" placeholder="name" name="textfield" id="textfield" value="{{ data.name }}" required/></th>
+    </tr>
+    <tr>
+{#      <td>Place: </td>#}
+      <td colspan="2"><label for="textfield2"></label>
+      <input type="text" class="form-control" placeholder="place" name="textfield2" id="textfield2" value="{{ data.place }}" required/></td>
+    </tr>
+    <tr>
+{#      <td>Pincode :</td>#}
+      <td colspan="2"><label for="textfield3"></label>
+      <input type="text" name="textfield3" class="form-control" placeholder="pincode" id="textfield3" value="{{ data.pinCode }}" required pattern="[6][0-9]{5}"/></td>
+    </tr>
+    <tr>
+{#      <td>latitude</td>#}
+      <td colspan="2"><label for="textfield4"></label>
+      <input type="text" class="form-control" placeholder="latitude" name="textfield4" id="textfield4" value="{{ data.latitude }}" required/></td>
+    </tr>
+    <tr>
+{#      <td>longitude</td>#}
+      <td colspan="2"><label for="textfield5"></label>
+      <input type="text" class="form-control" placeholder="latitude" name="textfield5" id="textfield5" value="{{ data.logtitude }}" required /></td>
+    </tr>
+    <tr>
+{#      <td>E-mail</td>#}
+      <td colspan="2"><label for="textfield6"></label>
+      <input type="email" class="form-control" placeholder="email" name="textfield6" id="textfield6" value="{{ data.email }}" readonly/></td>
+    </tr>
+    <tr>
+{#      <td>Phone number :</td>#}
+      <td colspan="2"><label for="textfield7"></label>
+      <input type="text" class="form-control" placeholder="phonenumber" name="textfield7" id="textfield7" value="{{ data.phoneNumber }}" required pattern="[6-9][0-9]{9}"/></td>
+    </tr>
+    <tr align="center">
+    <tr align="center">
+      <td colspan="2"><input type="submit" class="btn btn-primary py-2 px-5" name="button" id="button" value="Update" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

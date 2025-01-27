@@ -1,0 +1,40 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table class="text-white table">
+  <tr>
+    <th width="47" scope="col"><p>SI No</p></th>
+    <th width="56" scope="col">Name</th>
+    <th width="48" scope="col">Place</th>
+    <th width="69" scope="col">Pincode</th>
+    <th width="101" scope="col">Latitude</th>
+    <th width="118" scope="col">Longitude</th>
+    <th width="81" scope="col">E-Mail</th>
+    <th width="93" scope="col">Phone Number</th>
+    <th width="106" scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.name }}</td>
+    <td>&nbsp;{{ i.place }}</td>
+    <td>{{ i.pinCode }}</td>
+    <td>{{ i.latitude }}</td>
+    <td>{{ i.logtitude }}</td>
+    <td>&nbsp;{{ i.email }}</td>
+    <td>&nbsp;{{ i.phoneNumber }}</td>
+    <td><p><a href="/update_krishibhavan/{{ i.id }}#aaa" class="btn btn-warning py-2 px-3">Update</a></p>
+    <p><a href="/delete_krishibhavan/{{ i.id }}" class="btn btn-danger py-2 px-3" onclick ="return confirm('Are You sure')" >Delete</a></p></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
