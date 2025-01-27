@@ -1,4 +1,3 @@
-# Ignore Android Studio project files
 .idea/
 
 # Ignore Gradle files
